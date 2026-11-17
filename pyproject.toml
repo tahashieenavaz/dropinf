@@ -19,7 +19,7 @@ classifiers = [
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = ["pandas"]
+dependencies = ["pandas", "numpy"]
 keywords = ["productivity", "pandas"]
 license = { file = "LICENSE" }
 
