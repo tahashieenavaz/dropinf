@@ -6,6 +6,10 @@ DataFrameOrSeries: typing.TypeAlias = pandas.DataFrame | pandas.Series
 
 
 def dropinf(
-    dataframe: DataFrameOrSeries, *, infinity: float = numpy.inf, nan: float = numpy.nan
+    dataframe: DataFrameOrSeries,
+    *,
+    inplace: bool = False,
+    infinity: float = numpy.inf,
+    nan: float = numpy.nan,
 ) -> DataFrameOrSeries:
-    return dataframe.replace([infinity, -infinity], nan).dropna()
+    return dataframe.replace([infinity, -infinity], nan).dropna(inplace=inplace)
