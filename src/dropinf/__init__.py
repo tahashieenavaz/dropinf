@@ -2,8 +2,10 @@ import pandas
 import numpy
 import typing
 
-DataFrameSeries = pandas.DataFrame | pandas.Series
+DataFrameSeries: typing.TypeAlias = pandas.DataFrame | pandas.Series
 
 
-def dropinf(dataframe: DataFrameSeries) -> DataFrameSeries:
-    return dataframe.replace([numpy.inf, -numpy.inf], numpy.nan).dropna()
+def dropinf(
+    dataframe: DataFrameSeries, *, infinity: float = numpy.inf, nan: float = numpy.nan
+) -> DataFrameSeries:
+    return dataframe.replace([infinity, -infinity], nan).dropna()
